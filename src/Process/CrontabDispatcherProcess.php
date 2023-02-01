@@ -11,17 +11,17 @@ declare(strict_types=1);
  * @package think-swoole-crontab
  * @author OverNaive <overnaive20@gmail.com>
  */
-namespace ThinkSwooleCrontab\Process;
+namespace DcrSwooleCrontab\Process;
 
+use App\Utils\Log;
+use DcrSwoole\Container;
 use Swoole\Timer;
 use Swoole\Server;
 use Swoole\Process;
-use think\App;
-use think\facade\Log;
-use ThinkSwooleCrontab\CrontabRegister;
-use ThinkSwooleCrontab\Scheduler;
-use ThinkSwooleCrontab\Strategy\CoroutineStrategy;
-use ThinkSwooleCrontab\Strategy\StrategyInterface;
+use DcrSwooleCrontab\CrontabRegister;
+use DcrSwooleCrontab\Scheduler;
+use DcrSwooleCrontab\Strategy\CoroutineStrategy;
+use DcrSwooleCrontab\Strategy\StrategyInterface;
 
 class CrontabDispatcherProcess
 {
@@ -45,8 +45,14 @@ class CrontabDispatcherProcess
      */
     private $strategy;
 
-    public function __construct(App $app)
+    public static function getInstance()
     {
+        return new self();
+    }
+
+    public function __construct()
+    {
+        $app = Container::instance();
         $this->server = $app->get(Server::class);
         $this->crontabRegister = $app->make(CrontabRegister::class);
         $this->scheduler = $app->make(Scheduler::class);

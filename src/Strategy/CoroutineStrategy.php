@@ -11,11 +11,11 @@ declare(strict_types=1);
  * @package think-swoole-crontab
  * @author OverNaive <overnaive20@gmail.com>
  */
-namespace ThinkSwooleCrontab\Strategy;
+namespace DcrSwooleCrontab\Strategy;
 
 use Carbon\Carbon;
 use Swoole\Coroutine;
-use ThinkSwooleCrontab\Crontab;
+use DcrSwooleCrontab\Crontab;
 
 class CoroutineStrategy extends AbstractStrategy
 {

@@ -11,10 +11,11 @@ declare(strict_types=1);
  * @package think-swoole-crontab
  * @author OverNaive <overnaive20@gmail.com>
  */
-namespace ThinkSwooleCrontab;
+namespace DcrSwooleCrontab;
 
-use think\Log;
-use think\Config;
+
+use App\Utils\Config;
+use App\Utils\Log;
 
 class CrontabRegister
 {
@@ -23,15 +24,15 @@ class CrontabRegister
      */
     private $crontabManager;
 
-    /**
-     * @var Log
-     */
-    private $logger;
 
     /**
      * @var Config
      */
     private $config;
+    /**
+     * @var Log
+     */
+    private Log $logger;
 
     /**
      * CrontabRegisterListener constructor.
@@ -40,8 +41,8 @@ class CrontabRegister
     public function __construct(CrontabManager $crontabManager, Log $logger, Config $config)
     {
         $this->crontabManager = $crontabManager;
-        $this->logger = $logger;
-        $this->config = $config;
+        $this->logger = new Log();
+        $this->config = new Config();
     }
 
     public function handle(): void

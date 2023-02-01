@@ -11,14 +11,13 @@ declare(strict_types=1);
  * @package think-swoole-crontab
  * @author OverNaive <overnaive20@gmail.com>
  */
-namespace ThinkSwooleCrontab\Strategy;
+namespace DcrSwooleCrontab\Strategy;
 
-use think\App;
 
 abstract class AbstractStrategy implements StrategyInterface
 {
     /**
-     * @var App
+     * @var
      */
     protected $app;
 
@@ -26,8 +25,8 @@ abstract class AbstractStrategy implements StrategyInterface
      * AbstractStrategy constructor.
      * @param $app
      */
-    public function __construct(App $app)
+    public function __construct()
     {
-        $this->app = $app;
+        $this->app = di();
     }
 }

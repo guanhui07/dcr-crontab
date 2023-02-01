@@ -11,19 +11,19 @@ declare(strict_types=1);
  * @package think-swoole-crontab
  * @author OverNaive <overnaive20@gmail.com>
  */
-namespace ThinkSwooleCrontab\Strategy;
+namespace DcrSwooleCrontab\Strategy;
 
+use App\Utils\Log;
 use Carbon\Carbon;
 use Swoole\Timer;
 use Swoole\Coroutine;
-use think\App;
-use think\Log;
-use ThinkSwooleCrontab\Crontab;
+
+use DcrSwooleCrontab\Crontab;
 
 class Executor
 {
     /**
-     * @var App
+     * @var
      */
     private $app;
 
@@ -32,10 +32,10 @@ class Executor
      */
     private $logger;
 
-    public function __construct(App $app)
+    public function __construct()
     {
-        $this->app = $app;
-        $this->logger = $app->log;
+        $this->app = di();
+        $this->logger = new Log();
     }
 
     public function execute(Crontab $crontab)
@@ -78,9 +78,9 @@ class Executor
     protected function logResult(Crontab $crontab, bool $isSuccess)
     {
         if ($isSuccess) {
-            $this->logger->info(sprintf('Crontab task [%s] executed successfully at %s.', $crontab->getName(), date('Y-m-d H:i:s')));
+            Log::info(sprintf('Crontab task [%s] executed successfully at %s.', $crontab->getName(), date('Y-m-d H:i:s')));
         } else {
-            $this->logger->error(sprintf('Crontab task [%s] failed execution at %s.', $crontab->getName(), date('Y-m-d H:i:s')));
+            Log::error(sprintf('Crontab task [%s] failed execution at %s.', $crontab->getName(), date('Y-m-d H:i:s')));
         }
     }
 }

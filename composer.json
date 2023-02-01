@@ -1,5 +1,5 @@
 {
-  "name": "overnaive/think-swoole-crontab",
+  "name": "guanhui07/dcr_swoole-crontab",
   "description": "A crontab component base on think-swoole.",
   "type": "library",
   "license": "MIT",
@@ -10,13 +10,11 @@
     }
   ],
   "require": {
-    "php": "^7.1",
-    "topthink/think-swoole": "^3.0",
-    "nesbot/carbon": "^2.0"
+    "php": "^7.1 || ^8.0"
   },
   "autoload": {
     "psr-4": {
-      "ThinkSwooleCrontab\\": "src/"
+      "DcrSwooleCrontab\\": "src/"
     }
   }
 }
