@@ -1,6 +1,6 @@
 {
-  "name": "guanhui07/dcr_swoole-crontab",
-  "description": "A crontab component base on think-swoole.",
+  "name": "guanhui07/dcr_swoole_crontab",
+  "description": "A crontab component base on swoole.",
   "type": "library",
   "license": "MIT",
   "authors": [

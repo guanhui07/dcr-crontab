@@ -1,19 +1,16 @@
-# think-swoole-crontab
-A crontab component base on think-swoole.
+# dcr-swoole-crontab
+A crontab component base on swoole.
 
 ## 声明
 核心逻辑来自于 [Hyperf](https://hyperf.io) 的 [hyperf/crontab](https://github.com/hyperf/crontab) 组件。非常感谢 Hyperf 为大家提供这么优的组件。
 
-本组件试图让其运行在 ThinkPHP 里（需结合 [think-swoole](https://github.com/top-think/think-swoole) 组件）。
-
-目前还处于初步可用阶段，后续会慢慢完善。
 
 ## Requirement
 - PHP >= 7.1
 - [Composer](https://getcomposer.org/)
 
 ## Installation
-`composer require overnaive/think-swoole-crontab`
+`composer require  guanhui07/dcr_swoole_crontab
 
 ## Documents
 - [swoole](https://wiki.swoole.com/#/)
