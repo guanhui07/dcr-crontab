@@ -14,7 +14,6 @@ declare(strict_types=1);
 namespace DcrSwooleCrontab\Process;
 
 use App\Utils\Log;
-use DcrSwoole\Container;
 use Swoole\Timer;
 use Swoole\Server;
 use Swoole\Process;
@@ -22,7 +21,7 @@ use DcrSwooleCrontab\CrontabRegister;
 use DcrSwooleCrontab\Scheduler;
 use DcrSwooleCrontab\Strategy\CoroutineStrategy;
 use DcrSwooleCrontab\Strategy\StrategyInterface;
-
+use DcrSwoole\Utils\ApplicationContext;
 class CrontabDispatcherProcess
 {
     /**
@@ -52,7 +51,7 @@ class CrontabDispatcherProcess
 
     public function __construct()
     {
-        $app = Container::instance();
+        $app = ApplicationContext::getContainer();
         $this->server = $app->get(Server::class);
         $this->crontabRegister = $app->make(CrontabRegister::class);
         $this->scheduler = $app->make(Scheduler::class);
