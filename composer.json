@@ -1,5 +1,5 @@
 {
-  "name": "guanhui07/dcr_swoole_crontab",
+  "name": "guanhui07/dcr-swoole-crontab",
   "description": "A crontab component base on swoole.",
   "type": "library",
   "license": "MIT",
