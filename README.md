@@ -26,7 +26,7 @@ return [
         ...
         'swoole.init' => [
             ...
-            \ThinkSwooleCrontab\Process\CrontabDispatcherProcess::class,
+            \DcrSwooleCrontab\Process\CrontabDispatcherProcess::class,
             ...
         ],
         ...
@@ -39,11 +39,11 @@ return [
 ```
 return [
     'crontab' => [
-        (new \ThinkSwooleCrontab\Crontab())->setName('test-1')
+        (new \DcrSwooleCrontab\Crontab())->setName('test-1')
             ->setRule('* * * * * *')
             ->setCallback([Test::class, 'run'])
             ->setMemo('just a test crontab'),
-        (new \ThinkSwooleCrontab\Crontab())->setName('test-2')
+        (new \DcrSwooleCrontab\Crontab())->setName('test-2')
             ->setRule('* * * * * *')
             ->setCallback([Test::class, 'run'])
             ->setMemo('just another test crontab'),
