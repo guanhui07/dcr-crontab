@@ -10,7 +10,7 @@ A crontab component base on swoole.
 - [Composer](https://getcomposer.org/)
 
 ## Installation
-`composer require  guanhui07/dcr_swoole_crontab
+`composer require  guanhui07/dcr_swoole_crontab`
 
 ## Documents
 - [swoole](https://wiki.swoole.com/#/)
