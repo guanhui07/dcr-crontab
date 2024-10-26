@@ -19,7 +19,7 @@ A crontab component base on swoole.
 ## Usage
 
 1. 在 `event.php` 里为 `swoole.init` 事件添加监听类。
-```
+```php
 return [
 ...
     'listem' => [
@@ -44,7 +44,7 @@ $crontab->handle();
 ```
 
 2. 在配置文件 `crontab.php` 里添加 `crontab` 实例。
-```
+```php
 return [
     'crontab' => [
         (new \DcrSwooleCrontab\Crontab())->setName('test-1')
