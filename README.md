@@ -33,9 +33,17 @@ return [
     ],
 ...
 ];
+
+或 在启动脚本加
+$crontab = new CrontabDispatcherProcess();
+$crontab->handle();
+
+
+
+
 ```
 
-2. 在配置文件 `crontab.php` 里添加 `\ThinkSwooleCrontab\Crontab` 实例。
+2. 在配置文件 `crontab.php` 里添加 `crontab` 实例。
 ```
 return [
     'crontab' => [
