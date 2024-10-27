@@ -10,8 +10,7 @@
     }
   ],
   "require": {
-    "php": "^7.1 || ^8.0",
-    "blogdaren/logger":"dev-master"
+    "php": "^7.1 || ^8.0"
   },
   "autoload": {
     "psr-4": {
