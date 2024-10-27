@@ -15,7 +15,8 @@ namespace DcrSwooleCrontab;
 
 
 use App\Utils\Config;
-use App\Utils\Log;
+//use App\Utils\Log;
+use Logger\Logger;
 
 class CrontabRegister
 {
@@ -50,7 +51,8 @@ class CrontabRegister
         $crontabs = $this->parseCrontabs();
         foreach ($crontabs as $crontab) {
             if ($crontab instanceof Crontab) {
-                $this->logger->debug(sprintf('Crontab %s have been registered.', $crontab->getName()));
+                // $this->logger->debug(sprintf('Crontab %s have been registered.', $crontab->getName()));
+                Logger::warn('with WARNING level');
                 $this->crontabManager->register($crontab);
             }
         }
