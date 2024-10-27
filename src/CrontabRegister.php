@@ -52,7 +52,7 @@ class CrontabRegister
         foreach ($crontabs as $crontab) {
             if ($crontab instanceof Crontab) {
                 // $this->logger->debug(sprintf('Crontab %s have been registered.', $crontab->getName()));
-                Logger::warn('with WARNING level');
+                Logger::debug(sprintf('Crontab %s have been registered.', $crontab->getName()));
                 $this->crontabManager->register($crontab);
             }
         }
