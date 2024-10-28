@@ -15,7 +15,9 @@ namespace DcrSwooleCrontab;
 
 
 use App\Utils\Config;
-use App\Utils\Log;
+use DcrSwooleCrontab\Utils\Log;
+
+//use App\Utils\Log;
 
 
 class CrontabRegister
